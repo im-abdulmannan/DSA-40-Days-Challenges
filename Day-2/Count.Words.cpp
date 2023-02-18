@@ -1,29 +1,35 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-bool isCharacter(string input, char character)
+int countWord(string str)
 {
-    if ((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z'))
-    {
-        return true;
-    }
+    int count = 0;
+    bool word = false;
 
-    return false;
-};
-
-int main()
-{
-    string input = "Count,  the number of words in this string";
-    int wordCount = 0;
-    for (int i = 0; i < input.length(); i++)
+    for (char c : str)
     {
-        if (input[i] == ' ' || i == input.length() - 1)
+        if (c == ' ' && word)
         {
-            wordCount++;
+            count++;
+            word = false;
+        }
+        else if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+        {
+            word = true;
         }
     }
 
-    cout << "Word count: " << wordCount << endl;
+    if (word)
+    {
+        count++;
+    }
+    return count;
+}
+
+int main(void)
+{
+    string strcing = "Hello, !   World  ";
+    cout << countWord(strcing);
+
     return 0;
 }

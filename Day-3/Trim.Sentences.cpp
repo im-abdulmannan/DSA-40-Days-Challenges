@@ -14,7 +14,7 @@ string trimfnc(string str)
             break;
         }
     }
-    
+
     for (int i = str.length() - 1; i >= 0; i--)
     {
         if (str[i] != ' ')
@@ -34,6 +34,7 @@ string trimfnc(string str)
 int main()
 {
     string str = "   Hello world    ";
-    // getline(cin, str);
     cout << trimfnc(str);
+
+    return 0;
 }
