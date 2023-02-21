@@ -11,7 +11,7 @@ struct Node
 void create(int A[], int n)
 {
     int i;
-    struct Node *t, *last;
+    struct Node *temp, *last;
     first = new Node;
     first->data = A[0];
     first->next = NULL;
@@ -19,11 +19,11 @@ void create(int A[], int n)
 
     for (i = 1; i < n; i++)
     {
-        t = new Node;
-        t->data = A[i];
-        t->next = NULL;
-        last->next = t;
-        last = t;
+        temp = new Node;
+        temp->data = A[i];
+        temp->next = NULL;
+        last->next = temp;
+        last = temp;
     }
 }
 
