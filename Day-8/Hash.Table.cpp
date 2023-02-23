@@ -8,60 +8,52 @@ private:
     string *keys;
     string *values;
 
-    int get_hash(string key);
-
 public:
-    MyHashTable(int size = 0);
-
-    void add(string key, string value);
-
-    string get(string key);
-};
-
-MyHashTable::MyHashTable(int size)
-{
-    this->size = size;
-    this->keys = new string[size];
-    this->values = new string[size];
-}
-
-void MyHashTable::add(string key, string value)
-{
-    int index = get_hash(key);
-
-    while (keys[index] != " " && keys[index] != key)
+    MyHashTable(int size)
     {
-        index = (index + 1) % size;
+        this->size = size;
+        this->keys = new string[size];
+        this->values = new string[size];
     }
 
-    keys[index] = key;
-    values[index] = value;
-}
-
-string MyHashTable::get(string key)
-{
-    int index = get_hash(key);
-
-    while (keys[index] != " ")
+    void add(string key, string value)
     {
-        if (keys[index] == key)
+        int index = get_hash(key);
+
+        while (keys[index] != " " && keys[index] != key)
         {
-            return values[index];
+            index = (index + 1) % size;
         }
-        index = (index + 1) % size;
+
+        keys[index] = key;
+        values[index] = value;
     }
 
-    return " ";
-}
-
-int MyHashTable::get_hash(string key)
-{
-    int hash = 0;
-
-    for (char c : key)
+    string get(string key)
     {
-        hash += (int)c;
+        int index = get_hash(key);
+
+        while (keys[index] != " ")
+        {
+            if (keys[index] == key)
+            {
+                return values[index];
+            }
+            index = (index + 1) % size;
+        }
+
+        return " ";
     }
 
-    return hash % size;
-}
+    int get_hash(string key)
+    {
+        int hash = 0;
+
+        for (char c : key)
+        {
+            hash += (int)c;
+        }
+
+        return hash % size;
+    }
+};
