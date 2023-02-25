@@ -1,18 +1,38 @@
+#include <iostream>
+using namespace std;
+
 class Solution
 {
 public:
-    vector<int> twoSum(vector<int> &nums, int target)
+    int twoSum(int A[], int nums, int target)
     {
-        for (int first = 0; first < nums.size(); first++)
+        for (int first = 0; first < (nums - 1); first++)
         {
-            for (int second = first + 1; second < nums.size(); second++)
+            for (int second = first + 1; second < nums; second++)
             {
-                if (nums[first] + nums[second] == target)
+                if (A[first] + A[second] == target)
                 {
-                    return {first, second};
+                    return 1;
                 }
             }
         }
-        return {};
+        return 0;
     }
 };
+
+int main(void)
+{
+    Solution S;
+    int A[] = {2, 7, 11, 15};
+    int targetNum = 9;
+    int size = sizeof(A) / sizeof(A[0]);
+    if (S.twoSum(A, size, targetNum))
+    {
+        cout << "Yes" << endl;
+    }
+    else
+    {
+        cout << "No" << endl;
+    }
+    return 0;
+}
