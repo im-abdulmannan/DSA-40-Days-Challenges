@@ -16,6 +16,9 @@ public:
     // Iterative approach for fibonacci
     int IterativeFibonacchi(int n)
     {
+        if (n == 0)
+            return 0;
+
         int previousNumber = 0, currentNumber = 1, lastPreviousNumber;
 
         for (int i = 1; i < n; i++)
@@ -32,7 +35,7 @@ public:
 int main(void)
 {
     Solution S;
-    int n = 10;
+    int n = 5;
     cout << "Fibonacci of " << n << " by Iterative approach = " << S.IterativeFibonacchi(n);
     cout << "\nFibonacci of " << n << " by Recursive approach = " << S.RecursiveFibonacci(n);
 
