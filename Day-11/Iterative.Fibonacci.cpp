@@ -4,15 +4,6 @@ using namespace std;
 class Solution
 {
 public:
-    // Recursive approach for fibonacci
-    int RecursiveFibonacci(int n)
-    {
-        if (n <= 1)
-            return n;
-
-        return RecursiveFibonacci(n - 1) + RecursiveFibonacci(n - 2);
-    }
-
     // Iterative approach for fibonacci
     int IterativeFibonacchi(int n)
     {
@@ -37,7 +28,6 @@ int main(void)
     Solution S;
     int n = 5;
     cout << "Fibonacci of " << n << " by Iterative approach = " << S.IterativeFibonacchi(n);
-    cout << "\nFibonacci of " << n << " by Recursive approach = " << S.RecursiveFibonacci(n);
 
     return 0;
 }
