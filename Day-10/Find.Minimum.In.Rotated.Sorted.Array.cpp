@@ -21,7 +21,7 @@ public:
 int main(void)
 {
     Solution S;
-    std::vector<int> nums = {1, 2, 3, 4, 5, 6};
+    std::vector<int> nums = {3, 4, 5, 1, 2};
     std::cout << S.findMin(nums);
 
     return 0;
