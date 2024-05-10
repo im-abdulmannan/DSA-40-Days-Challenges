@@ -14,6 +14,7 @@ To aid you in your journey, here are some recommended resources:
 ## Contact
 If you have any questions, suggestions, or feedback, feel free to reach out:
 - Email: a.mannan0607@example.com
-- GitHub: [Abdul Mannan](https://github.com/im-abdulmannan)
+- GitHub: [im-abdulmannan](https://github.com/im-abdulmannan/)
+- Linkedin: [im-abdulmannan](https://www.linkedin.com/in/im-abdulmannan/)
 
 Happy coding, and best of luck with the challenges!
